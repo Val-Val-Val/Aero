@@ -9,7 +9,131 @@ $(function() {
     });
 });
 
+$(document).ready(function(){
+    $(".main_menu").on("click","a", function (event) {
+        //отменяем стандартную обработку нажатия по ссылке
+        event.preventDefault();
 
+        //забираем идентификатор бока с атрибута href
+        var id  = $(this).attr('href'),
+
+            //узнаем высоту от начала страницы до блока на который ссылается якорь
+            top = $(id).offset().top;
+
+        //анимируем переход на расстояние - top за 1500 мс
+        $('body,html').animate({scrollTop: top}, 5000);
+    });
+    // обработчик формы
+    $("#callback1").submit(function() {
+        var answer = document.getElementById('past');
+        $.ajax({
+            type: "GET",
+            url: "mail.php",
+            data: $("#callback").serialize(),
+            statusCode: {
+                400: function() {
+                    answer.innerHTML = "Bad Request";
+                },
+                403: function() {
+                    answer.innerHTML = "Forbidden";
+                },
+                404: function() {
+                    answer.innerHTML = "Page not found";
+                },
+                200: function() {
+                    answer.innerHTML = "Спасибо!<br/>Ваша заявка отправлена!";
+                },
+                500: function() {
+                    answer.innerHTML = "Server Error";
+                },
+                501: function() {
+                    answer.innerHTML = "Not Implemented";
+                },
+                502: function() {
+                    answer.innerHTML = "Bad Gateway";
+                },
+                503: function() {
+                    answer.innerHTML = "Service Unavailable";
+                },
+                504: function() {
+                    answer.innerHTML = "Gateway Timeout";
+                }
+            }
+        }).done(function() {
+            openThanks();
+            $("#callback").trigger("reset");
+        });
+        return false;
+    });
+    $("#callback2").submit(function() {
+        var answer = document.getElementById('past');
+        $.ajax({
+            type: "GET",
+            url: "mail.php",
+            data: $("#callback1").serialize(),
+            statusCode: {
+                400: function() {
+                    answer.innerHTML = "Bad Request";
+                },
+                403: function() {
+                    answer.innerHTML = "Forbidden";
+                },
+                404: function() {
+                    answer.innerHTML = "Page not found";
+                },
+                200: function() {
+                    answer.innerHTML = "Спасибо!<br/>Ваша заявка отправлена!";
+                },
+                500: function() {
+                    answer.innerHTML = "Server Error";
+                },
+                501: function() {
+                    answer.innerHTML = "Not Implemented";
+                },
+                502: function() {
+                    answer.innerHTML = "Bad Gateway";
+                },
+                503: function() {
+                    answer.innerHTML = "Service Unavailable";
+                },
+                504: function() {
+                    answer.innerHTML = "Gateway Timeout";
+                }
+            }
+        }).done(function() {
+            openThanks();
+            $("#callback1").trigger("reset");
+        });
+        return false;
+    });
+    var openThanks = function () {
+        window.location= "thanks.html";
+    }
+    // обработчик модалки
+    var open = function() { // лoвим клик пo ссылки с id="go"
+        //event.preventDefault(); выключaем стaндaртную рoль элементa
+        $('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
+            function() { // пoсле выпoлнения предъидущей aнимaции
+                $('#modal_form')
+                    .css('display', 'block') // убирaем у мoдaльнoгo oкнa display: none;
+                    .animate({
+                        opacity: 1
+                    }, 200); // плaвнo прибaвляем прoзрaчнoсть oднoвременнo сo съезжaнием вниз
+            });
+    };
+    $('#modal_close, #overlay').click(function() { // лoвим клик пo крестику или пoдлoжке
+        $('#modal_form')
+            .animate({
+                    opacity: 0,
+                }, 200, // плaвнo меняем прoзрaчнoсть нa 0 и oднoвременнo двигaем oкнo вверх
+                function() { // пoсле aнимaции
+                    $(this).css('display', 'none'); // делaем ему display: none;
+                    $('#overlay').fadeOut(400); // скрывaем пoдлoжку
+                }
+            );
+    });
+
+});
 // singleItem: true,
 //     transitionStyle: "fade",
 //     dots: false,

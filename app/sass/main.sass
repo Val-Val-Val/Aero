@@ -66,6 +66,7 @@ p
 	border-radius: 40px
 	border: none
 	font-size: 22px
+	padding-top: 23px
 	font-family: $circe-extra
 	box-shadow: 0 7px 40px 1px rgba(230,87,87,1)
 	&:hover
@@ -442,7 +443,7 @@ header
 		.img-slider
 			margin-left: -158px
 		.text
-			margin-top: 70px
+			margin-top: 90px
 			margin-left: 50px
 			h3
 				font-size: 30px
@@ -450,16 +451,16 @@ header
 				margin-bottom: 0px
 			p
 				margin: 0px
+				&:nth-child(3)
+					display: block
+					margin-bottom: 20px
 			.btn
-				margin-top: 25px
 				width: 260px
 				height: 58px
-			.data
-				margin-top: 5px
-				margin-bottom: 20px
+				padding-top: 15px
 .delivery
 	background-image: url("../img/bg-delivery.jpg")
-	height: 995px
+	height: 1070px
 	position: relative
 	top: -3
 	h2
@@ -550,6 +551,7 @@ header
 				position: relative
 				margin-left: 765px
 				padding: 10px
+				z-index: 30
 .contacts
 	position: relative
 	&:before
@@ -557,7 +559,7 @@ header
 		content: ""
 		height: 291px
 		width: 100%
-		top: -123px
+		top: -175px
 		left: -13px
 		background-image: url(../img/cloud-contacts.png)
 		z-index: 25
@@ -583,6 +585,7 @@ header
 		.btn
 			margin-top: 20px
 			width: 248px
+			padding-top: 18px
 footer
 
 	.footer-line
@@ -657,7 +660,7 @@ footer
 			.product-block
 				position: absolute
 				width: 100%
-				height: 100%
+				height: 560px
 				z-index: 10
 				display: flex
 				flex-direction: column
@@ -669,16 +672,18 @@ footer
 					text-align: center
 					justify-content: center
 					align-items: center
-					width: 240px
+					width: 237px
 					display: table-cell
 					word-wrap: break-word
-					line-height: 1.5
+					line-height: 1.1
+					overflow: hidden
+					height: 39%
 				.sweaters__icon,.tshirts__icon
-					margin-top: -130px
+					margin-top: -60px
 				.cups__text
 					left: 153px
 				.cups__icon
-					margin-top: -130px
+					margin-top: -70px
 					left: 153px
 
 			img
@@ -753,9 +758,15 @@ footer
 			height: 64px
 			padding: 13px 0px 13px 40px
 	.size
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: center
 		input
 			border: 1px solid #e8e8e8
 			padding: 10px
+		.btn
+			margin-bottom: 0
 .title-text-print
 	p
 		text-align: right
@@ -773,7 +784,6 @@ footer
 		width: 100%
 		height: 48px
 		border-radius: 30px
-		position: relative
 		display: flex
 		justify-content: space-around
 		align-items: center
@@ -1110,6 +1120,248 @@ footer
 
 		label[for="Upink"]
 			background-color: #d7569c
+	.size
+		display: flex
+		flex-direction: row
+		justify-content: flex-end
+		align-items: center
+		p
+			display: none
+		input
+			display: none
+		.btn
+			margin-bottom: 0
+
+
+
+
+#overlay
+	z-index: 99
+	position: fixed
+	background-color: #000
+	opacity: 0.8
+	filter: alpha(opacity=80)
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	cursor: pointer
+	display: none
+
+
+#modal_form1
+	position: fixed
+	z-index: 110
+	width: 500px
+	border: 3px solid #6ac0f3
+	border-radius: 20px
+	top: 10%
+	left: 35%
+	padding: 30px 0
+	background-color: #fff
+	display: flex
+	text-align: center
+	flex-direction: column
+	h3
+		font-size: 24px
+		text-transform: uppercase
+		margin: 0
+	form
+		display: flex
+		flex-direction: column
+		justify-content: center
+		text-align: center
+		height: 100%
+		input
+			width: 300px
+			margin: 30px auto
+			border: 2px solid #6ac0f3
+			border-radius: 6px
+			text-align: center
+			height: 60px
+			&:focus,&:hover,&:active
+				outline: none !important
+				color: #fff
+				box-shadow: 0 7px 60px 5px #6ac0f3
+				transition: all 0.6s
+			&:placeholder
+				color: #737373
+				font-size: 12px
+		//textarea
+		//	margin: 30px auto
+		//	width: 300px
+		//	border: 2px solid #6ac0f3
+		//	border-radius: 6px
+		//	font-size: 12px
+		//	color: #737373
+		//	display: flex
+		//	align-items: center
+		//	justify-content: center
+		//	text-align: center
+		//	&:focus,&:hover,&:active
+		//		outline: none !important
+		//		color: #fff
+		.btn
+			margin: 30px auto
+			width: 300px
+
+
+
+#modal_close
+	position: absolute
+	top: 5px
+	right: 5px
+	border-radius: 50%
+	background: url(../img/ico_close.png) no-repeat center
+	display: block
+	width: 35px
+	height: 35px
+	background-color: $accent
+
+
+
+#modal_form2
+	position: fixed
+	z-index: 110
+	width: 650px
+	height: 480px
+	border: 3px solid #6ac0f3
+	border-radius: 20px
+	top: 10%
+	left: 30%
+	background-color: #fff
+	display: flex
+	flex-direction: column
+	justify-content: center
+	text-align: center
+	&:before
+		content: ""
+		position: absolute
+		top: 100px
+		right: 100px
+		height: 455px
+		width: 1181px
+		background-image: url(../img/air.png)
+	h2
+		font-size: 28px
+		line-height: 35px
+		text-transform: uppercase
+		margin: 0
+		padding: 60px 0 45px 0
+	p
+		font-size: 24px
+		line-height: 1.5
+		margin-top: 25px
+		margin-bottom: 35px
+	.btn
+		z-index: 10
+		position: absolute
+		left: 180px
+
+#modal_close
+	position: absolute
+	top: 5px
+	right: 5px
+	border-radius: 50%
+	background: url(../img/ico_close.png) no-repeat center
+	display: block
+	width: 35px
+	height: 35px
+	background-color: $accent
+
+
+
+
+#modal_form3
+	position: fixed
+	z-index: 110
+	width: 500px
+	border: 3px solid #6ac0f3
+	border-radius: 20px
+	top: 5%
+	left: 35%
+	padding: 30px 0
+	background-color: #fff
+	display: flex
+	text-align: center
+	flex-direction: column
+	h3
+		font-size: 24px
+		text-transform: uppercase
+		margin: 0
+	form
+		display: flex
+		flex-direction: column
+		justify-content: center
+		text-align: center
+		height: 100%
+		input
+			width: 300px
+			margin: 20px auto
+			border: 2px solid #6ac0f3
+			border-radius: 6px
+			text-align: center
+			height: 60px
+			&:focus,&:hover,&:active
+				outline: none !important
+				color: #fff
+				box-shadow: 0 7px 60px 5px #6ac0f3
+				transition: all 0.6s
+			&:placeholder
+				color: #737373
+				font-size: 12px
+		textarea
+			margin: 20px auto
+			width: 300px
+			height: 70px
+			border: 2px solid #6ac0f3
+			border-radius: 6px
+			font-size: 12px
+			color: #737373
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			&:focus,&:hover,&:active
+				outline: none !important
+				color: #fff
+				box-shadow: 0 7px 60px 5px #6ac0f3
+				transition: all 0.6s
+
+			&:placeholder
+				color: #737373
+				font-size: 14px
+		.btn
+			margin: 30px auto
+			width: 300px
+
+
+
+#modal_close
+	position: absolute
+	top: 5px
+	right: 5px
+	border-radius: 50%
+	background: url(../img/ico_close.png) no-repeat center
+	display: block
+	width: 35px
+	height: 35px
+	background-color: $accent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @import "media" // Всегда в конце
