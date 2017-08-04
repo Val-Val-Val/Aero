@@ -58,6 +58,7 @@ h2
 	font-family: Intro, sans-serif
 p
 	font-size: 16px
+
 .btn
 	width: 286px
 	height: 70px
@@ -70,14 +71,36 @@ p
 	font-family: $circe-extra
 	box-shadow: 0 7px 40px 1px rgba(230,87,87,1)
 	&:hover
-		color: white
+		color: #fff
 		transition: all 0.6s
 		box-shadow: 0 7px 60px 5px rgba(230,87,87,1)
-
+	&:focus,&:hover,&:active
+		outline: none !important
+		color: #fff
+.btn1,.btn2
+	width: 286px
+	height: 70px
+	background-color: $accent
+	color: white
+	border-radius: 40px
+	border: none
+	font-size: 22px
+	padding-top: 17px
+	font-family: $circe-extra
+	text-align: center
+	box-shadow: 0 7px 40px 1px rgba(230,87,87,1)
+	&:hover
+		color: #fff
+		transition: all 0.6s
+		text-decoration: none
+		box-shadow: 0 7px 60px 5px rgba(230,87,87,1)
 	&:focus,&:hover,&:active
 		outline: none !important
 		color: #fff
 
+
+a
+	cursor: pointer
 
 
 header
@@ -347,11 +370,14 @@ header
 				background-image: url("../img/check.png")
 				background-size: cover
 				background-repeat: no-repeat
-.btn
-	width: 273px
-	height: 77px
-	border-radius: 40px
-	margin-bottom: 62px
+form
+	width: 272px
+	display: flex
+	.btn2
+		width: 273px
+		height: 77px
+		border-radius: 40px
+		margin-bottom: 62px
 
 .production-t-shirts
 	background-image: url("../img/bg-t-shirts.jpg")
@@ -440,10 +466,11 @@ header
 		align-items: center
 		justify-content: center
 		display: flex
+		margin-top: 34px
 		.img-slider
 			margin-left: -158px
 		.text
-			margin-top: 90px
+			margin-top: 10px
 			margin-left: 50px
 			h3
 				font-size: 30px
@@ -454,10 +481,26 @@ header
 				&:nth-child(3)
 					display: block
 					margin-bottom: 20px
-			.btn
+			.btn3
 				width: 260px
 				height: 58px
-				padding-top: 15px
+				padding: 15px
+				background-color: $accent
+				color: white
+				border-radius: 40px
+				border: none
+				font-size: 22px
+				font-family: $circe-extra
+				text-align: center
+				box-shadow: 0 7px 40px 1px rgba(230,87,87,1)
+				&:hover
+					color: #fff
+					transition: all 0.6s
+					text-decoration: none
+					box-shadow: 0 7px 60px 5px rgba(230,87,87,1)
+				&:focus,&:hover,&:active
+					outline: none !important
+					color: #fff
 .delivery
 	background-image: url("../img/bg-delivery.jpg")
 	height: 1070px
@@ -535,7 +578,7 @@ header
 				font-size: 20px
 				color: #737373
 				outline: none
-			.btn
+			.btn1
 				width: 196px !important
 				height: 75px
 				background-color: $accent
@@ -544,6 +587,7 @@ header
 				box-shadow: 0px 11px 62px 10px rgba(230,87,87,1)
 				margin: auto
 				border: none
+				text-decoration: none
 		.text-form
 			position: relative
 			p
@@ -641,7 +685,7 @@ footer
 		font-family: $circe
 		margin: 15px 0
 	a
-		font-size: 20px
+		font-size: 22px
 		font-family: $circe-extra
 
 .seting-wrapper
@@ -1149,7 +1193,7 @@ footer
 	display: none
 
 
-#modal_form1
+#modal_form
 	position: fixed
 	z-index: 110
 	width: 500px
@@ -1172,6 +1216,7 @@ footer
 		justify-content: center
 		text-align: center
 		height: 100%
+		margin: 0 auto
 		input
 			width: 300px
 			margin: 30px auto
@@ -1181,7 +1226,59 @@ footer
 			height: 60px
 			&:focus,&:hover,&:active
 				outline: none !important
-				color: #fff
+				box-shadow: 0 7px 60px 5px #6ac0f3
+				transition: all 0.6s
+			&:placeholder
+				color: #737373
+				font-size: 12px
+		.btn
+			margin: 30px auto
+			width: 300px
+#modal_close
+	position: absolute
+	top: 5px
+	right: 5px
+	border-radius: 50%
+	background: url(../img/ico_close.png) no-repeat center
+	display: block
+	width: 35px
+	height: 35px
+	background-color: $accent
+
+#modal_form1
+	position: fixed
+	z-index: 110
+	width: 500px
+	border: 3px solid #6ac0f3
+	border-radius: 20px
+	top: 10%
+	left: 35%
+	padding: 30px 0
+	background-color: #fff
+	display: flex
+	text-align: center
+	flex-direction: column
+	margin: 0 auto
+	h3
+		font-size: 24px
+		text-transform: uppercase
+		margin: 0
+	form
+		display: flex
+		flex-direction: column
+		justify-content: center
+		text-align: center
+		height: 100%
+		margin: 0 auto
+		input
+			width: 300px
+			margin: 30px auto
+			border: 2px solid #6ac0f3
+			border-radius: 6px
+			text-align: center
+			height: 60px
+			&:focus,&:hover,&:active
+				outline: none !important
 				box-shadow: 0 7px 60px 5px #6ac0f3
 				transition: all 0.6s
 			&:placeholder
@@ -1204,10 +1301,7 @@ footer
 		.btn
 			margin: 30px auto
 			width: 300px
-
-
-
-#modal_close
+#modal_close1
 	position: absolute
 	top: 5px
 	right: 5px
@@ -1234,6 +1328,7 @@ footer
 	flex-direction: column
 	justify-content: center
 	text-align: center
+	margin: 0 auto
 	&:before
 		content: ""
 		position: absolute
@@ -1258,7 +1353,7 @@ footer
 		position: absolute
 		left: 180px
 
-#modal_close
+#modal_close2
 	position: absolute
 	top: 5px
 	right: 5px
@@ -1285,6 +1380,7 @@ footer
 	display: flex
 	text-align: center
 	flex-direction: column
+	margin: 0 auto
 	h3
 		font-size: 24px
 		text-transform: uppercase
@@ -1304,7 +1400,6 @@ footer
 			height: 60px
 			&:focus,&:hover,&:active
 				outline: none !important
-				color: #fff
 				box-shadow: 0 7px 60px 5px #6ac0f3
 				transition: all 0.6s
 			&:placeholder
@@ -1327,17 +1422,13 @@ footer
 				color: #fff
 				box-shadow: 0 7px 60px 5px #6ac0f3
 				transition: all 0.6s
-
 			&:placeholder
 				color: #737373
 				font-size: 14px
 		.btn
 			margin: 30px auto
 			width: 300px
-
-
-
-#modal_close
+#modal_close3
 	position: absolute
 	top: 5px
 	right: 5px
