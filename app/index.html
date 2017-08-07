@@ -1153,7 +1153,7 @@
 		<input type="text" id="name" name="name" placeholder="Ваше Имя" required>
 		<input type="text" id="tel" name="tel" placeholder="Ваш Телефон" required>
 		<!--<textarea id="msg" name="msg" placeholder="Сообщение..."></textarea>-->
-		<a href="#" class="btn" type="submit" id="modal1">Отправить</a>
+		<input href="#" class="btn" type="submit" id="modal1" value="Отправить">
 	</form>
 </div>
 <div id="overlay"></div>
@@ -1169,7 +1169,7 @@
 		<input type="text" id="name" name="name" placeholder="Ваше Имя" required>
 		<input type="text" id="tel" name="tel" placeholder="Ваш Телефон" required>
 		<!--<textarea id="msg" name="msg" placeholder="Сообщение..."></textarea>-->
-		<a href="#" class="btn" type="submit" id="modal1">Отправить</a>
+		<input href="#" class="btn" type="submit" id="modal1" value="Отправить">
 	</form>
 </div>
 <div id="overlay"></div>
@@ -1200,7 +1200,7 @@
 		<input type="text" id="name" name="name" placeholder="Ваше Имя" required>
 		<input type="text" id="tel" name="mail" placeholder="Ваш емейл" required>
 		<textarea name="" id="msg" cols="200" rows="10" placeholder="Сообщение..." maxlength="200"></textarea>
-		<a href="#" class="btn" type="submit" id="submit">Отправить</a>
+		<input href="#" class="btn" type="submit" id="submit" value="Отправить">
 	</form>
 </div>
 <div id="overlay"></div>
@@ -1209,7 +1209,7 @@
 	<link rel="stylesheet" href="css/main.min.css">
 	<script src="js/scripts.min.js"></script>
 <script>
-        $('.btn').click(function(){
+        $('.btn','.btn2').click(function(){
             var product = $(this).attr('data-product');
            $('input[name="product"]').val(product);
 			});
